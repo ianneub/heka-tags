@@ -17,8 +17,8 @@ package tags
 import (
   . "github.com/mozilla-services/heka/pipeline"
   "github.com/mozilla-services/heka/message"
-  "fmt"
-  "time"
+  // "fmt"
+  // "time"
 )
 
 type TagsDecoderConfig struct {
@@ -49,18 +49,18 @@ func (td *TagsDecoder) Init(config interface{}) (err error) {
 
 func (td *TagsDecoder) Decode(pack *PipelinePack) (packs []*PipelinePack, err error) {
   // fmt.Printf("Message: %v\n", pack.Message)
-  fmt.Printf("Tags: %v\n", td.tags)
+  // fmt.Printf("Tags: %v\n", td.tags)
 
   field := message.NewFieldInit("Tags", message.Field_STRING, "")
   for _, value := range td.tags {
     field.AddValue(value)
   }
   pack.Message.AddField(field)
-  fmt.Printf("Message: %v\n", pack.Message)
+  // fmt.Printf("Message: %v\n", pack.Message)
   if err = td.messageFields.PopulateMessage(pack.Message, nil); err != nil {
     return
   }
-  time.Sleep(1 * time.Second)
+  // time.Sleep(1 * time.Second)
   // fmt.Printf("Message: %v\n", pack.Message)
   return []*PipelinePack{pack}, nil
 }
