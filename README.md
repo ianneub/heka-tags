@@ -9,7 +9,7 @@ This plugin is a work in progress and is not ready for production use. Please gi
 
 ## How to use
 
-To use either plugin you will need to add this project to your Heka source code by adding a line to `cmake/plugin_loader.cmake` that will load the plugin, like this:
+To use this plugin you will need to add this project to your Heka source code by adding a line to `cmake/plugin_loader.cmake` that will load the plugin, like this:
 
     add_external_plugin(git https://github.com/ianneub/heka-tags master)
 
