@@ -27,4 +27,4 @@ Please create an issue on GitHub with any questions or comments. Pull requests a
 
 ## License
 
-See `LICENSE.txt`.
+See `LICENSE`.
